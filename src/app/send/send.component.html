@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="send.js"></script>
+</head>
+<div class="midcont">
+    <h3 class="head-inb">&nbsp;&nbsp;Sent Mail </h3>
+    <div class="boxes">
+        <p> <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-refresh"></span> Refresh
+                    </button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-default btn-sm">
+                        <i class="fa fa-exclamation"></i> &nbsp;
+                    </button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span>&nbsp;
+                    </button>
+        </p>
+
+        <div class="search">
+            <input id="text" type="text" name="search" placeholder="  Search email"><button id="searchbutton">Search</button>
+        </div>
+    </div>
+    <div class="mailtable">
+        <table style="width: 220%;" id="display" class="table table-hover">
+            <tr class="success" *ngFor ="let obj of maillist">
+                <td class="check-mail">
+                    <input type="checkbox" class="i-checks">
+                </td>
+                <td class="success" id="tname" >{{obj.tname}} </td>
+                <td class="success"> <span style="float: right;" class="label label-info">Documents</span></td>
+                <td id="contain">{{obj}} </td>
+                <td><i style="float: right;" class="fa fa-paperclip"></i></td>
+                <td id="time" style="color:#0e0d0d;">{{myDate | date}}</td>
+            </tr>
+            
+
+        </table>
+
+    </div>
+</div>
